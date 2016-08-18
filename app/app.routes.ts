@@ -1,9 +1,8 @@
-import { provideRouter, RouterConfig }  from '@angular/router';
 import { DocumentationComponent } from './components/documentation.component';
 import { AboutComponent } from './components/about.component';
 import { ExpensesComponent } from './components/expenses.component';
 
-const routes: RouterConfig = [
+export const AppRoutes = [
   {
     path: 'documentation',
     component: DocumentationComponent
@@ -17,8 +16,4 @@ const routes: RouterConfig = [
     component: ExpensesComponent
   },
   { path: '**', component: ExpensesComponent }
-];
-
-export const appRouterProviders = [
-  provideRouter(routes)
 ];
