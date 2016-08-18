@@ -8,10 +8,14 @@ import { AboutComponent }  from './components/about.component';
 import { ExpensesComponent }  from './components/expenses.component';
 import { AppRoutes } from './app.routes';
 
+import { ExpenseService } from "./services/expenses.service";
+
+
 @NgModule({
   imports: [ BrowserModule, RouterModule.forRoot(AppRoutes) ],
   declarations: [ AppComponent, DocumentationComponent, AboutComponent, ExpensesComponent ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent], 
+  providers: [ ExpenseService ]
 })
 
 export class AppModule {}

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-
-class Bill {
-    constructor(public id, public description, public amount){};
-}
+import { Bill } from "../models";
+import { ExpenseService } from "../services/expenses.service";
 
 @Component ({
     selector: 'expenses',
@@ -31,13 +29,9 @@ class Bill {
 })
 
 export class ExpensesComponent {
-    bills: Bill[] = [
-        new Bill(1, "Coffee", 8),
-        new Bill(2, "Breakfast", 10),
-        new Bill(3, "Umbrella  ", 35),
-        new Bill(4, "Salad", 6),
-        new Bill(5, "Petrol", 52)
-    ];
+    constructor(private service: ExpenseService){}
+
+    bills: Bill[] = this.service.getExpenses();
 
     getTotal() {
         return 50;
