@@ -40,8 +40,9 @@ export class ExpensesComponent {
 
     addBill(success:boolean) {
         if(success) {
-            this.bill.id = this.bills.length + 6;
+            this.bill.id = this.bills.length + 1;
             this.bills.push(this.bill);
+            this.bill = new Bill();
         }
     }
 

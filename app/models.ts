@@ -1,3 +1,3 @@
 export class Bill {
-    constructor(public id, public description, public amount){};
+    constructor(public id = 0, public description = "", public amount = 0){};
 }
