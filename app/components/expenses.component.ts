@@ -22,18 +22,27 @@ import { ExpenseService } from "../services/expenses.service";
         </tr>
     </table>
 
-    <span class="big">
-        <h3>{{getTotal()}} in total </h3>
-    </span>
+   <expense-form [bill]="bill" (onAdded)="addBill($event)"></expense-form>
     `
 })
 
 export class ExpensesComponent {
-    constructor(private service: ExpenseService){}
+    bill: Bill;
+    constructor(private service: ExpenseService){
+        this.bill = new Bill();
+    }
 
     bills: Bill[] = this.service.getExpenses();
 
     getTotal() {
         return 50;
     }
+
+    addBill(success:boolean) {
+        if(success) {
+            this.bill.id = this.bills.length + 6;
+            this.bills.push(this.bill);
+        }
+    }
+
 }

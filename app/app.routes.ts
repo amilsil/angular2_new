@@ -15,5 +15,8 @@ export const AppRoutes = [
     path: 'home',
     component: ExpensesComponent
   },
-  { path: '**', component: ExpensesComponent }
+  { 
+    path: '**', 
+    component: ExpensesComponent 
+  }
 ];
