@@ -10,7 +10,7 @@ import { AboutComponent }  from './components/about.component';
 import { ExpensesComponent }  from './components/expenses.component';
 import { ExpenseForm }  from './components/expenseform.component';
 // routes
-import { AppRoutes } from './app.routes';
+import { routing } from './app.routes';
 // services
 import { ExpenseService } from "./services/expenses.service";
 
@@ -19,7 +19,7 @@ import { ExpenseService } from "./services/expenses.service";
   imports: [ 
     BrowserModule, 
     FormsModule,
-    RouterModule.forRoot(AppRoutes) 
+    routing 
   ],
 
   declarations: [ 

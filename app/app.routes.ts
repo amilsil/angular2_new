@@ -1,8 +1,9 @@
+import { RouterModule } from '@angular/router';
 import { DocumentationComponent } from './components/documentation.component';
 import { AboutComponent } from './components/about.component';
 import { ExpensesComponent } from './components/expenses.component';
 
-export const AppRoutes = [
+const AppRoutes = [
   {
     path: 'documentation',
     component: DocumentationComponent
@@ -20,3 +21,5 @@ export const AppRoutes = [
     component: ExpensesComponent 
   }
 ];
+
+export const routing = RouterModule.forRoot(AppRoutes);
